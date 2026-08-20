@@ -192,6 +192,14 @@ The application can be deployed to any hosting provider that supports Node.js. T
 
 https://sniplinksg.onrender.com
 
+## API Canary
+
+The deployed application's health endpoint is monitored by an external HTTP canary:
+
+`GET https://sniplinksg.onrender.com/health`
+
+The canary periodically verifies that the API is publicly reachable and returns the expected operational status without writing data to the database.
+
 ### Production checklist
 
 - Rotate any secret that was previously committed to Git.
