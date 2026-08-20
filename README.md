@@ -22,26 +22,28 @@ Link.ly is a full-stack URL shortener built with Express, vanilla HTML, CSS, Jav
 
 ## Architecture
 
-```text
-Browser
-   |
-   | POST /api/links
-   v
-Express application
-   |
-   | Supabase Data API
-   v
-PostgreSQL
+```mermaid
+flowchart LR
+    subgraph Browser[User's browser]
+        UI[HTML, CSS and JavaScript]
+    end
 
-Browser
-   |
-   | GET /:code
-   v
-Express application
-   |
-   | Look up destination
-   v
-HTTP redirect
+    API[Node.js and Express API]
+    Logic[Validate URL and generate code]
+    Supabase[Supabase Data API]
+    Database[(PostgreSQL)]
+    Website[Original website]
+
+    UI -->|POST /api/links| API
+    API --> Logic
+    Logic -->|Insert URL and code via HTTPS| Supabase
+    Supabase <--> Database
+    API -->|201 Shortened URL| UI
+
+    UI -->|GET /:code| API
+    API -->|Query code via HTTPS| Supabase
+    API -->|302 Location header| UI
+    UI -->|Request destination| Website
 ```
 
 ## Development notes
