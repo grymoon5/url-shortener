@@ -188,6 +188,10 @@ The application can be deployed to any hosting provider that supports Node.js. T
 8. Deploy the service and visit `/health` on the public URL.
 9. Create a link from the landing page, open its short URL, and confirm that it redirects correctly.
 
+### Live Application
+
+https://sniplinksg.onrender.com
+
 ### Production checklist
 
 - Rotate any secret that was previously committed to Git.
