@@ -161,6 +161,8 @@ Run tests in watch mode:
 npm run test:watch
 ```
 
+The test suite covers URL validation, short-code generation, health checks, invalid requests, successful link creation, and redirect behavior.
+
 ## Deployment
 
 The application can be deployed to any hosting provider that supports Node.js. The following example uses Render.
@@ -191,6 +193,14 @@ The application can be deployed to any hosting provider that supports Node.js. T
 ### Live Application
 
 https://sniplinksg.onrender.com
+
+## API Canary
+
+The deployed application's health endpoint is monitored by an external HTTP canary:
+
+`GET https://sniplinksg.onrender.com/health`
+
+The canary periodically verifies that the API is publicly reachable and returns the expected operational status without writing data to the database.
 
 ### Production checklist
 

@@ -156,4 +156,4 @@ The repository currently includes:
 - HTTP `302` redirects
 - Health, validation, and short-code tests
 
-The automated test suite currently contains 11 passing tests. Browser behavior and mobile layout are not covered by automated tests.
+The automated test suite currently contains 13 passing tests. Browser behavior and mobile layout are not covered by automated tests.
