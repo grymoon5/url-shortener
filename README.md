@@ -1,6 +1,6 @@
-# Link.ly URL Shortener
+# SnipLink URL Shortener
 
-Link.ly is a full-stack URL shortener built with Express, vanilla HTML, CSS, JavaScript, and Supabase. It creates six-character short codes, stores links in PostgreSQL through Supabase, and redirects visitors to the original URL.
+SnipLink is a full-stack URL shortener built with Express, vanilla HTML, CSS, JavaScript, and Supabase. It creates six-character short codes, stores links in PostgreSQL through Supabase, and redirects visitors to the original URL.
 
 ## Features
 
