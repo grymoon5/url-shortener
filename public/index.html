@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        name = "viewport"
+        content = "width=device-width, initial-scale=1"
+        />
+        <title> Link.ly, a URL Shortener</title>
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="brand" href="/">LINK.ly</a>
+            <div class="header-actions">
+            <a class="login-link" href="/login">Log in</a>
+            <a class ="signup-link" href="/sign-up">Sign up</a>
+            <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to dark mode">
+                <span>☾</span>
+            </button>
+        </div>
+        </header>
+
+        <section class="hero">
+        <div class="hero-copy">
+            <h1>Shorten your links</h1>
+            <p class="hero-description"> Paste your long links here and get back something shorter and shareable.</p>        
+        </div>
+
+        <div class="shortener-card">
+            <p class="card-kicker">URL Shortener</p>
+            <h2>Shorten a link</h2>
+
+            <div id="form-view">
+                <form id="shorten-form">
+                <label for="url">Long URL</label>
+                <input
+                    id="url"
+                    name="url"
+                    type="url"
+                    placeholder="Place long link here"
+                    required
+                />
+                <button id="submit-button" class="primary-button" type="submit">Shorten URL</button>
+                    </form>
+                </div>
+
+                <p id="error" class="error" role="alert"></p>
+
+                <section id="result" hidden>
+                    <p class="success-label">Your link is ready!</p>
+
+                    <div class="url-block">
+                        <span>Original URL</span>
+                        <a id="original-url" class="original-result" target="_blank" rel="noopener noreferrer"></a>
+                    </div>
+                    <div class="short-result-block">
+                        <div class="short-result-row">
+                        <a id="short-url" target="_blank" rel="noopener noreferrer"></a>
+                        <button id="copy-result" class="copy-button" type="button">Copy</button>
+                        </div>
+                    </div>
+
+                    <button id="shorten-another" class="primary-button" type="button">Shorten another link</button>
+                </section>
+            </div>
+        </section>
+
+        <section class="recent-section">
+            <div class="section-heading">
+            <h2>Recent Links</h2>
+            <button id="clear-recent" class="text-button" type="button" hidden>Clear all</button>
+            </div>
+            <p id="empty-recent" class="empty-state">No links yet. Shorten one above to see it here.</p>
+            <div id="recent-links" class="recent-links"></div>
+        </section>
+
+        <script src="/app.js"></script>
+    </body>
+</html>
+        
+        
