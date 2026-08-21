@@ -1,6 +1,6 @@
-# Link.ly URL Shortener
+# SnipLink URL Shortener
 
-Link.ly is a full-stack URL shortener built with Express, vanilla HTML, CSS, JavaScript, and Supabase. It creates six-character short codes, stores links in PostgreSQL through Supabase, and redirects visitors to the original URL.
+SnipLink is a full-stack URL shortener built with Express, vanilla HTML, CSS, JavaScript, and Supabase. It creates six-character short codes, stores links in PostgreSQL through Supabase, and redirects visitors to the original URL.
 
 ## Features
 
@@ -196,13 +196,20 @@ The application can be deployed to any hosting provider that supports Node.js. T
 
 https://sniplinksg.onrender.com
 
-## API Canary
+### API Canary and Monitoring
 
-The deployed application's health endpoint is monitored by an external HTTP canary:
+The deployed application is monitored externally using [UptimeRobot](https://uptimerobot.com/).
+
+UptimeRobot periodically sends a read-only request to:
 
 `GET https://sniplinksg.onrender.com/health`
 
-The canary periodically verifies that the API is publicly reachable and returns the expected operational status without writing data to the database.
+The endpoint returns:
+
+```json
+{
+  "status": "ok"
+}
 
 ### Production checklist
 
