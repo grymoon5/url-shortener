@@ -210,8 +210,9 @@ The endpoint returns:
 {
   "status": "ok"
 }
+```
 
-### Production checklist
+## Production checklist
 
 - Rotate any secret that was previously committed to Git.
 - Confirm `.env` is ignored with `git check-ignore -v .env`.
